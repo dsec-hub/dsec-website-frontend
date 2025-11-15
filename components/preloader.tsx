@@ -19,7 +19,9 @@ function PreLoader() {
 
 		const paths = svgElement.querySelectorAll("path");
 
-		gsap.fromTo(
+		const tl = gsap.timeline();
+
+		tl.fromTo(
 			paths,
 			{ drawSVG: "0%" },
 			{
@@ -28,7 +30,21 @@ function PreLoader() {
 				stagger: 0.2,
 				ease: "power2.inOut",
 			}
-		)
+		);
+
+		tl.to(
+			paths,
+			{
+				duration: 1,
+				fill: (i, target) => {
+					const stroke = (target as SVGPathElement).getAttribute("stroke");
+					return stroke || "#000";
+				},
+				stagger: 0.1,
+				ease: "power2.inOut",
+			},
+			"-=0.5"
+		);
 	}, [setHasPreloaded]);
 
 	return (
