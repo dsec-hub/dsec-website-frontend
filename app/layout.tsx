@@ -3,6 +3,8 @@ import { DM_Sans } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
+import { LoaderProvider } from "./loader-context";
+
 const dmSans = DM_Sans({
 	variable: "--font-dm-sans",
 	subsets: ["latin"],
@@ -21,7 +23,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${dmSans.variable} antialiased`}>
-				<ViewTransitions>{children}</ViewTransitions>
+				<ViewTransitions>
+					<LoaderProvider>{children}</LoaderProvider>
+				</ViewTransitions>
 			</body>
 		</html>
 	);
