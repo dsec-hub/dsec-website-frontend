@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 import { LoaderProvider } from "./loader-context";
 import Navbar from "@/components/navbar";
 
-const dmSans = DM_Sans({
-	variable: "--font-dm-sans",
-	subsets: ["latin"],
+// fonts
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-cta", // Defines the CSS variable name automatically
+    display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+    subsets: ["latin"],
+    variable: "--font-main", // Defines the CSS variable name automatically
+    display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -22,8 +30,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${dmSans.variable} antialiased`}>
+        // fonts
+		<html lang="en" className={`${spaceGrotesk.className} ${inter.variable}`}>
+            {/*100px gutter (left and right) on medium+ sizes*/}
+			<body className={`px-4 md:px-[80px] lg:px-[160px]`}>
 				<ViewTransitions>
 					<LoaderProvider>
                         <Navbar />

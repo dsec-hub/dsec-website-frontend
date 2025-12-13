@@ -36,7 +36,7 @@ function PreLoader() {
 			paths,
 			{ drawSVG: "0%" },
 			{
-				duration: 1,
+				duration: 0.1,
 				drawSVG: "100%",
 				stagger: 0.2,
 				ease: "power2.inOut",

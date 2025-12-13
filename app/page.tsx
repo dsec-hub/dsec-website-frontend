@@ -1,12 +1,10 @@
-import Hero from "@/components/hero";
-import Navbar from "@/components/navbar";
-import PreLoader from "@/components/preloader";
+import Hero from "@/components/home/hero/hero";
 
 export default function Home() {
   return (
     <>
       {/* TODO: uncomment this: <PreLoader />*/}
-      {/*<Hero />*/}
+      <Hero />
     </>
   );
 }
