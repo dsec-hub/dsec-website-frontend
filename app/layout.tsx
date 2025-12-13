@@ -4,6 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 import { LoaderProvider } from "./loader-context";
+import Navbar from "@/components/navbar";
 
 const dmSans = DM_Sans({
 	variable: "--font-dm-sans",
@@ -24,7 +25,10 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${dmSans.variable} antialiased`}>
 				<ViewTransitions>
-					<LoaderProvider>{children}</LoaderProvider>
+					<LoaderProvider>
+                        <Navbar />
+                        {children}
+                    </LoaderProvider>
 				</ViewTransitions>
 			</body>
 		</html>

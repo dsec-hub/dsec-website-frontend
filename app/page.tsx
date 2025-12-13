@@ -5,9 +5,8 @@ import PreLoader from "@/components/preloader";
 export default function Home() {
   return (
     <>
-      <PreLoader />
-      <Navbar />
-      <Hero />
+      {/* TODO: uncomment this: <PreLoader />*/}
+      {/*<Hero />*/}
     </>
   );
 }
