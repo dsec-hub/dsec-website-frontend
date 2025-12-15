@@ -3,12 +3,27 @@
 import { Menu } from "lucide-react";
 
 import Image from "next/image";
-import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import NavbarLink from "@/components/ui/navbar/NavbarLink";
 
 //todo: add actual animated links
 //todo: add proper styling for the links
 
+type NavigationLink = {
+    label: string;
+    href: string;
+}
+
 export default function Navbar() {
+
+    const navigationLinks: NavigationLink[] = [
+        {label: "Home", href: "/"},
+        {label: "About Us", href: "/about-us"},
+        {label: "Projects", href: "/projects"},
+        {label: "Events", href: "/events"},
+        {label: "Contact Us", href: "/contact-us"},
+    ]
+
 	return (
 		<div className={"w-full flex bg-background h-20 border-b border-white/20"}>
 			<div className="max-w-7xl px-4 md:px-8 lg:px-0 w-full flex items-center justify-between mx-auto">
@@ -21,13 +36,12 @@ export default function Navbar() {
 					alt="DSEC logo"
 				/>
 
+
 				{/*this is shown if the screen is large enough else hidden */}
 				<ul className="gap-8 items-center hidden lg:flex w-fit font-sans rounded-2xl">
-					<li>Home</li>
-					<li>About Us</li>
-					<li>Projects</li>
-					<li>Events</li>
-					<li>Contact Us</li>
+                    {navigationLinks.map(nav =>
+                        <NavbarLink key={nav.label} href={nav.href}>{nav.label}</NavbarLink>
+                    )}
 				</ul>
 
 				<ul className="gap-8 items-center hidden lg:flex w-fit font-sans rounded-2xl">

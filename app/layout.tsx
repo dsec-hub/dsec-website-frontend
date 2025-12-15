@@ -4,7 +4,7 @@ import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 
 import { LoaderProvider } from "./loader-context";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/ui/navbar/navbar";
 
 //* Fonts
 const inter = Inter({

@@ -3,7 +3,6 @@
 import { useTransitionRouter } from "next-view-transitions";
 import {TransitionStrategy} from "@/hooks/transitions/transitionStrategy";
 import {GridRevealTransition} from "@/hooks/transitions/gridRevealTransition";
-import {SlideInOutTransition} from "@/hooks/transitions/slideInOutTransition";
 
 export const useViewTransition = (
     defaultStrategy: TransitionStrategy = new GridRevealTransition() // change this to set default transition
@@ -20,7 +19,6 @@ export const useViewTransition = (
 		transition: TransitionStrategy = defaultStrategy
 	) => {
 
-
 		const currentPath = window.location.pathname;
 
 		if (currentPath === href) return;
@@ -30,7 +28,7 @@ export const useViewTransition = (
 
         // redirect user
         router.push(href);
-        if (onRouteChange) onRouteChange(); // wtf is this ill just keep it
+        if (onRouteChange) onRouteChange();
 
         await new Promise((r) => setTimeout(r, 400));
 
