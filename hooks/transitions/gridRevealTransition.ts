@@ -97,7 +97,7 @@ export class GridRevealTransition implements TransitionStrategy {
                 duration: 0.05, // how long fade
                 ease: "power2.inOut",
                 stagger: {
-                    amount: 1.0, // total time for all blocks to black
+                    amount: 0.2, // total time for all blocks to black
                     from: "random", // choose random blocks to fade
                 },
                 onComplete: () => {
@@ -124,7 +124,7 @@ export class GridRevealTransition implements TransitionStrategy {
                 duration: 0.05, // how long it takes for a block to clear
                 ease: "power2.inOut",
                 stagger: {
-                    amount: 0.5, // how long for all blocks to clear
+                    amount: 0.2, // how long for all blocks to clear
                     from: "random", // randomly choose blocks
                 },
                 onComplete: () => {
