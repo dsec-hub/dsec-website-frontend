@@ -176,3 +176,21 @@
 	fill: #d63384;
 	stroke: none;
 }
+
+@keyframes infinite-scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.infinite-scroll-item {
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    animation-name: infinite-scroll;
+    animation-timing-function: linear;
+}
+
+

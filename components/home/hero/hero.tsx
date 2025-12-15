@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <section className={"h-screen w-full flex flex-col justify-center items-start relative"}>
 
-            <div className={"w-full h-full absolute z-0 left-0 top-0"}>
+{/*            <div className={"w-full h-full absolute z-0 left-0 top-0"}>
                 <PixelBlast
                     variant="circle"
                     pixelSize={6}
@@ -26,7 +26,7 @@ export default function Hero() {
                     edgeFade={0.05}
                     transparent
                 />
-            </div>
+            </div>*/}
 
             <div className={"flex flex-col relative h-full justify-around max-h-[50vh] sm:max-h-[60vh] px-[20px] md:px-[80px] lg:px-[160px] z-50"}>
                 <div className={"flex flex-col "}>
