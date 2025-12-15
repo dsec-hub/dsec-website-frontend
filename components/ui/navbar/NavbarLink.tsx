@@ -10,7 +10,7 @@ export default function NavbarLink({href, children} : {
     const {navigateWithTransition} = useViewTransition();
 
     return (
-        <li className={"cursor-pointer"}>
+        <li className={"cursor-pointer flex justify-center items-center"}>
             <a onClick={(event) => {
                 event.preventDefault();
                 navigateWithTransition(href);
