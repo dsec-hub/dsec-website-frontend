@@ -3,6 +3,7 @@ import About from "@/components/home/about/about";
 import Ribbon from "@/components/ui/ribbon";
 import { CodeXml } from "lucide-react";
 import { Metadata } from "next";
+import PreLoader from "@/components/preloader";
 
 export const metadata: Metadata = {
     title: "DSEC Burwood",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <div className={"flex flex-col relative overflow-hidden"}>
-            {/* TODO: uncomment this: <PreLoader />*/}
+            <PreLoader />
             <Hero />
             <div className={"relative w-full"}>
                 <Ribbon

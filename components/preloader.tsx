@@ -46,7 +46,7 @@ function PreLoader() {
 		tl.to(
 			paths,
 			{
-				duration: 1,
+				duration: 0.4,
 				fill: (i, target) => {
 					const stroke = (target as SVGPathElement).getAttribute("stroke");
 					return stroke || "#000";
@@ -61,7 +61,7 @@ function PreLoader() {
 			logoRefContainer.current,
 			{
 				clipPath: "inset(0% 0% 100% 0%)",
-				duration: 0.8,
+				duration: 0.3,
 				ease: "power2.inOut",
 				onComplete: () => {
 					if (logoRefContainer.current)
@@ -74,7 +74,7 @@ function PreLoader() {
 			preloaderContainerRef.current,
 			{
 				clipPath: "inset(0% 0% 100% 0%)",
-				duration: 0.8,
+				duration: 0.3,
 				ease: "power2.inOut",
 			},
 			"+=0.2"
@@ -84,10 +84,10 @@ function PreLoader() {
 	return (
 		<>
 			<div
-				className="fixed h-svh w-screen overflow-hidden z-50 pointer-events-auto top-0 left-0"
+				className="z-100 fixed h-svh w-screen overflow-hidden pointer-events-auto top-0 left-0"
 				ref={preloaderContainerRef}
 			>
-				<div className="bg-foreground w-full h-full top-0 absolute flex justify-center items-center">
+				<div className="z-100 bg-background w-full h-full top-0 absolute flex justify-center items-center">
 					<div
 						className="overflow-hidden"
 						ref={logoRefContainer}
